@@ -1,0 +1,33 @@
+{
+  "id": "7dc4c980-c7ec-4608-85c6-6ffe2d6ba012",
+  "name": "smalltalk.appraisal.no_problem",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.appraisal.no_problem",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Whew!",
+            "Alright, thanks!",
+            "Glad to hear that!",
+            "I\u0027m relieved, thanks!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

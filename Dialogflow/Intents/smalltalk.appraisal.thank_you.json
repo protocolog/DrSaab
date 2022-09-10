@@ -1,0 +1,31 @@
+{
+  "id": "78a04a34-ddee-42a6-9b7e-07a8da7a29d6",
+  "name": "smalltalk.appraisal.thank_you",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.appraisal.thank_you",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Anytime. That\u0027s what I\u0027m here for.",
+            "It\u0027s my pleasure to help you...."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

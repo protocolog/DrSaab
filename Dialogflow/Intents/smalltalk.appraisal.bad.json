@@ -1,0 +1,31 @@
+{
+  "id": "f27e1e73-c0b8-431d-8ae1-25bb8ea97619",
+  "name": "smalltalk.appraisal.bad",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.appraisal.bad",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I\u0027m sorry. Please let me know if I can help in some way.",
+            "I must be missing some knowledge. I\u0027ll have my developer look into this!!!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

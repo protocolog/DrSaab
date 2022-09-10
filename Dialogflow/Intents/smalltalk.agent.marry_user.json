@@ -1,0 +1,32 @@
+{
+  "id": "6a5f90bd-0130-443a-b8ae-278f214a3dec",
+  "name": "smalltalk.agent.marry_user",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.marry_user",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I\u0027m afraid I\u0027m too virtual for such a commitment.",
+            "In the virtual sense that I can, sure.",
+            "I know you can\u0027t mean that, but I\u0027m flattered all the same."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

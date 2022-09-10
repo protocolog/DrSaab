@@ -1,0 +1,31 @@
+{
+  "id": "fb23f106-4c89-49af-a006-7c1ad05b77df",
+  "name": "smalltalk.agent.real",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.real",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I\u0027m not a real person, but I certainly exist.",
+            "I must have impressed you if you think I\u0027m real. But no, I\u0027m a virtual being."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

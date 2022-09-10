@@ -1,0 +1,31 @@
+{
+  "id": "966ba58a-0ee4-462e-bc74-78e8c1e305c5",
+  "name": "smalltalk.agent.talk_to_me",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.talk_to_me",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Sure. Let\u0027s talk!",
+            "It would be my pleasure to talk to you !"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

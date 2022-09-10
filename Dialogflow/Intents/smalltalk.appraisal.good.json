@@ -1,0 +1,33 @@
+{
+  "id": "ddf157b1-8bf6-4ea9-bb13-96d1cfc0bb6a",
+  "name": "smalltalk.appraisal.good",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.appraisal.good",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I know, right?",
+            "Agreed!",
+            "I agree!",
+            "Glad you think so!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

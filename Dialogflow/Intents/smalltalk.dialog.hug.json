@@ -1,0 +1,32 @@
+{
+  "id": "894fe871-0ad9-42ae-9942-48d0a9065c2f",
+  "name": "smalltalk.dialog.hug",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.dialog.hug",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I wish I could really hug you!",
+            "I love hugs!",
+            "Hugs are the best! Wish i could also do one..."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}
