@@ -1,0 +1,38 @@
+[
+  {
+    "id": "a269a8af-6a81-485b-9046-4e8a07f898a2",
+    "data": [
+      {
+        "text": "Done All Symptoms",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d41b96e3-0b63-41ce-8514-401e318920ab",
+    "data": [
+      {
+        "text": "Submit",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "49588386-edf9-4573-b067-298bfb6c794f",
+    "data": [
+      {
+        "text": "All symptoms are mentioned",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

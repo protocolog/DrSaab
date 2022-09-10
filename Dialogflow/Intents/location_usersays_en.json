@@ -1,0 +1,26 @@
+[
+  {
+    "id": "2a311d3a-2d83-4489-baf6-061ba127aafb",
+    "data": [
+      {
+        "text": "locate me",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d39cb1a3-444c-427b-aca1-dd2f6061522b",
+    "data": [
+      {
+        "text": "give my location",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

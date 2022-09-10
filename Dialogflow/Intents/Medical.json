@@ -1,0 +1,109 @@
+{
+  "id": "ed4db345-2b62-4563-baa2-c819c1534ceb",
+  "name": "Medical",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "2eda8058-7b43-41d5-be20-042f1af0b0a3",
+          "required": true,
+          "dataType": "@sys.given-name",
+          "name": "name",
+          "value": "$name",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please provide Patient Name:"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "bdc504a0-ec9b-491a-91ca-79fe14af0f8d",
+          "required": true,
+          "dataType": "@sys.phone-number",
+          "name": "number",
+          "value": "$number",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please Provide your Phone Numbers with your country code:"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "32a9c727-065a-4121-b255-cbe81e58f6b7",
+          "required": true,
+          "dataType": "@sys.email",
+          "name": "email",
+          "value": "$email",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please Provide your Email:"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Hey $name! Welcome to DrSaab..",
+          "subtitle": "How May I help you?",
+          "imageUrl": "http://thenationonlineng.net/wp-content/uploads/2017/09/Doctors.jpg"
+        },
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Please Provide the issue(s) you have",
+          "replies": [
+            "mild fever",
+            "back pain",
+            "itching",
+            "Bruising",
+            "belly pain",
+            "vomiting",
+            "nausea",
+            "constipation",
+            "diarrhea",
+            "chest pain"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "facebook": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "GOOGLE_ASSISTANT_WELCOME"
+    }
+  ]
+}

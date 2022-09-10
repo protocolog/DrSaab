@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1d0e7453-b314-429f-8798-5fe1db815b81",
+    "data": [
+      {
+        "text": "I am having problem of abnormally large amount of urination",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "0e231dc7-015b-4294-998d-ddb702059b0e",
+    "data": [
+      {
+        "text": "pee too much",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c7dfb493-a2f6-4f07-ad95-e20c24b79a87",
+    "data": [
+      {
+        "text": "urinate too much",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b2fca6de-5409-440c-b77a-2aa2105a5796",
+    "data": [
+      {
+        "text": "polyuria",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]
