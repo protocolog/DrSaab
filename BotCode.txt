@@ -1,0 +1,64 @@
+
+<script>  var div = document.createElement('div');  div.className = 'fb-customerchat';  div.setAttribute('page_id', '299247230998305');  div.setAttribute('ref', '');  document.body.appendChild(div);  window.fbMessengerPlugins = window.fbMessengerPlugins || {    init: function () {      FB.init({        appId            : '1678638095724206',        autoLogAppEvents : true,        xfbml            : true,        version          : 'v3.0'      });    }, callable: []  };  window.fbAsyncInit = window.fbAsyncInit || function () {    window.fbMessengerPlugins.callable.forEach(function (item) { item(); });    window.fbMessengerPlugins.init();  };  setTimeout(function () {    (function (d, s, id) {      var js, fjs = d.getElementsByTagName(s)[0];      if (d.getElementById(id)) { return; }      js = d.createElement(s);      js.id = id;      js.src = "//connect.facebook.net/en_US/sdk/xfbml.customerchat.js";      fjs.parentNode.insertBefore(js, fjs);    }(document, 'script', 'facebook-jssdk'));  }, 0);</script>
+
+
+
+
+
+exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
+    
+    const requestPermission = (app) => {
+      app.askForPermission('To locate you', app.SupportedPermissions.DEVICE_PRECISE_LOCATION);
+    };
+    
+    const userInfo = (app) => {
+        if (app.isPermissionGranted()) {
+            const address = app.getDeviceLocation().address;
+            if (address) {            
+                console.log(`You are at ${address}`);
+            }
+            else {
+                // Note: Currently, precise locaton only returns lat/lng coordinates on phones and lat/lng coordinates 
+                // and a geocoded address on voice-activated speakers. 
+                // Coarse location only works on voice-activated speakers.
+                console.log('Sorry, I could not figure out where you are.');
+            }
+        } else {
+            console.log('Sorry, I could not figure out where you are.');
+        }
+    };
+   const app = new DialogflowApp({request, response});
+    const actions = new Map();
+    actions.set('location', requestPermission);
+    actions.set('user_info', userInfo);
+    app.handleRequest(actions);
+
+});
+
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.3'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="299247230998305"
+  theme_color="#0084ff"
+  logged_in_greeting="Hello Welcome to DrSaab!"
+  logged_out_greeting="Hello Welcome to DrSaab!">
+</div>

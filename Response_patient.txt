@@ -1,0 +1,16 @@
+.then(function (response) {
+
+//agent.add(`${global.name_main} you have Submitted Symptoms as-> ${global.Symp_Item}`);
+  var dis = response.data.prediction[0];
+  var accuracy = response.data.prediction[1];
+     console.log("Disease Predicted ->",dis);
+     agent.add("disease is ", dis);
+     console.log("Confidence ->",accuracy);
+     agent.add("confidance is",accuracy);
+
+})
+
+
+.catch(function (error) {
+  console.log("Error ->",error);
+});

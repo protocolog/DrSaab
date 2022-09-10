@@ -1,0 +1,628 @@
+'use strict';
+
+const axios = require('axios');
+const fetch = require('node-fetch');
+const functions = require('firebase-functions');
+const admin=require('firebase-admin');
+const DialogflowApp = require('actions-on-google').DialogflowApp;
+const {WebhookClient} = require('dialogflow-fulfillment');
+const {Card, Suggestion} = require('dialogflow-fulfillment');
+admin.initializeApp(functions.config().firebase);
+var db=admin.firestore();
+global.name_main='';
+global.email_main='';
+global.phone_number_main='';
+global.Symp_Item=[];
+
+global.arr = [];
+process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
+ 
+exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
+  const agent = new WebhookClient({ request, response });
+  console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
+  console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
+ 
+ function rymingwordhandler(agent){
+   const word =agent.parameters.word;
+   agent.add(`Here are the rhyming word for ${word}`);
+  
+   
+ }
+   
+   function welcome(agent) {
+    agent.add(`Welcome to my agent!`);
+  }
+  function fallback(agent) {
+    agent.add(`I didn't understand`);
+    agent.add(`I'm sorry, can you try again?`);
+  }
+  
+  function handleReadFromDB(agent){
+  	return admin.database().ref('data').once('value').then((snapshot)=> {
+    const value_symp = snapshot.child('symptoms').val();
+    const value_name = snapshot.child('Name').val();  
+      if(value_symp!==null){
+      agent.add(`You Have Entered your Symptoms as ${value_symp}`);
+       
+      }
+      if(value_name!==null){
+      agent.add(`Your Name is ${value_name}`);
+       
+      }
+    });
+  }
+  function handlemedical(agent){
+  global.name_main=agent.parameters.name;
+   global.email_main=agent.parameters.email;  
+   global.phone_number_main=agent.parameters.number; 
+  }
+  function handlebackpain(agent){
+   global.Symp_Item.push('back pain');
+  }
+  function handlemildfever(agent){
+    global.Symp_Item.push('mild fever');
+  }
+   function handleCramps(agent){
+   global.Symp_Item.push('cramps');
+  }
+   function handleBruising(agent){
+
+   global.Symp_Item.push('Bruising');
+  }
+  function handleObesity(agent){
+   global.Symp_Item.push('obesity');
+
+  }
+  function handlebellypain(agent){
+  global.Symp_Item.push('belly Pain');
+  }
+  
+  function handleitching(agent){
+global.Symp_Item.push('ithcing');
+}
+function handleskin_rash(agent){
+global.Symp_Item.push('skin rash');
+}
+function handlenodal_skin_eruptions(agent){
+global.Symp_Item.push('nodal skin eruptions');
+}
+function handlecontinuous_sneezing(agent){
+global.Symp_Item.push('continuous sneezing');
+}
+  function handleshivering(agent){
+global.Symp_Item.push('shivering');
+}
+  function handlejoint_pain(agent){
+global.Symp_Item.push('joint pain');
+}
+ function handlestomach_pain(agent){
+global.Symp_Item.push('stomach pain');
+}
+ function handleacidity(agent){
+global.Symp_Item.push('acidity');
+}
+ function handleulcers_on_tongue(agent){
+global.Symp_Item.push('ulcers on tongue');
+}
+ function handlemuscle_wasting(agent){
+global.Symp_Item.push('muscle wasting');
+}
+ function handlevomiting(agent){
+global.Symp_Item.push('vomiting');
+}
+ function handleburning_micturition(agent){
+global.Symp_Item.push('burning micturition');
+}
+ function handlespotting_urination(agent){
+global.Symp_Item.push('spotting urination');
+}
+ function handlefatigue(agent){
+global.Symp_Item.push('fatigue');
+}
+ function handleweight_gain(agent){
+global.Symp_Item.push('weight gain');
+}
+ function handleanxiety(agent){
+global.Symp_Item.push('anxiety');
+}
+ function handlecold_hands_and_feets(agent){
+global.Symp_Item.push('cold hands and feets');
+}
+ function handlemood_swings(agent){
+global.Symp_Item.push('mood swings');
+}
+ function handleweight_loss(agent){
+global.Symp_Item.push('weight loss');
+}
+ function handlerestlessness(agent){
+global.Symp_Item.push('restlessness');
+}
+ function handlelethargy(agent){
+global.Symp_Item.push('lethargy');
+}
+ function handlepatches_in_throat(agent){
+global.Symp_Item.push('patches in throat');
+}
+ function handleirregular_sugar_level(agent){
+global.Symp_Item.push('irregular sugar level');
+}
+ function handlecough(agent){
+global.Symp_Item.push('cough');
+}
+ function handlehigh_fever(agent){
+global.Symp_Item.push('high fever');
+}
+ function handlesunken_eyes(agent){
+global.Symp_Item.push('sunken eyes');
+}
+ function handlebreathlessness(agent){
+global.Symp_Item.push('breathlessness');
+}
+ function handlesweating(agent){
+global.Symp_Item.push('sweating');
+}
+ function handledehydration(agent){
+global.Symp_Item.push('dehydration');
+}
+ function handleindigestion(agent){
+global.Symp_Item.push('indigestion');
+}
+ function handleheadache(agent){
+global.Symp_Item.push('headache');
+}
+ function handleyellowish_skin(agent){
+global.Symp_Item.push('yellowish skin');
+}
+ function handledark_urine(agent){
+global.Symp_Item.push('dark urine');
+}
+ function handlenausea(agent){
+global.Symp_Item.push('nausea');
+}
+ function handleloss_of_appetite(agent){
+global.Symp_Item.push('loss of appetite');
+}
+ function handlepain_behind_the_eyes(agent){
+global.Symp_Item.push('pain behind the eyes');
+}
+ function handleconstipation(agent){
+global.Symp_Item.push('constipation');
+}
+ function handleabdominal_pain(agent){
+global.Symp_Item.push('abdominal pain');
+}
+ function handlediarrhea(agent){
+global.Symp_Item.push('diarrhea');
+}
+ function handleyellow_urine(agent){
+global.Symp_Item.push('yellow urine');
+}
+ function handleyellowing_of_eyes(agent){
+global.Symp_Item.push('yellowing of eyes');
+}
+ function handleacute_liver_failure(agent){
+global.Symp_Item.push('acute liver failure');
+}
+ function handlefluid_overload(agent){
+global.Symp_Item.push('fluid overload');
+}
+ function handleswelling_of_stomach(agent){
+global.Symp_Item.push('swelling of stomach');
+}
+ function handleswelled_lymph_nodes(agent){
+global.Symp_Item.push('swelled lymph nodes');
+}
+ function handlemalaise(agent){
+global.Symp_Item.push('malaise');
+}
+ function handleblurred_and_distorted_vision(agent){
+global.Symp_Item.push('blurred and distorted vision');
+}
+ function handlephlegm(agent){
+global.Symp_Item.push('phlegm');
+}
+ function handlethroat_irritation(agent){
+global.Symp_Item.push('throat irritation');
+}
+ function handleredness_of_eyes(agent){
+global.Symp_Item.push('redness of eyes');
+}
+ function handlesinus_pressure(agent){
+global.Symp_Item.push('sinus pressure');
+}
+ function handlerunny_nose(agent){
+global.Symp_Item.push('runny nose');
+}
+ function handlecongestion(agent){
+global.Symp_Item.push('congestion');
+}
+ function handlechest_pain(agent){
+global.Symp_Item.push('chest pain');
+}
+ function handleweakness_in_limbs(agent){
+global.Symp_Item.push('weakness in limbs');
+}
+ function handlefast_heart_rate(agent){
+global.Symp_Item.push('fast heart rate');
+}
+ function handlepain_during_bowel_movements(agent){
+global.Symp_Item.push('pain during bowel movements');
+}
+ function handlepain_in_anal_region(agent){
+global.Symp_Item.push('pain in anal region');
+}
+ function handlebloody_stool(agent){
+global.Symp_Item.push('bloody stool');
+}
+ function handleirritation_in_anus(agent){
+global.Symp_Item.push('irritation in anus');
+}
+ function handleneck_pain(agent){
+global.Symp_Item.push('neck pain');
+}
+ function handleswollen_legs(agent){
+global.Symp_Item.push('swollen legs');
+}
+ function handleswollen_blood_vessels(agent){
+global.Symp_Item.push('swollen blood vessels');
+}
+ function handlepuffy_face_and_eyes(agent){
+global.Symp_Item.push('puffy face and eyes');
+}
+ function handleenlarged_thyroid(agent){
+global.Symp_Item.push('enlarged thyroid');
+}
+ function handlebrittle_nails(agent){
+global.Symp_Item.push('brittle nails');
+}
+ function handleswollen_extremeties(agent){
+global.Symp_Item.push('swollen extremeties');
+}
+ function handledrying_and_tingling_lips(agent){
+global.Symp_Item.push('drying and tingling lips');
+}
+ function handleslurred_speech(agent){
+global.Symp_Item.push('slurred speech');
+}
+ function handleknee_pain(agent){
+global.Symp_Item.push('knee pain');
+}
+ function handlehip_joint_pain(agent){
+global.Symp_Item.push('hip joint pain');
+}
+function handlemuscle_weakness(agent){
+global.Symp_Item.push('muscle weakness');
+}
+function handlestiff_neck(agent){
+global.Symp_Item.push('stiff neck');
+}
+function handleswelling_joints(agent){
+global.Symp_Item.push('swelling joints');
+}
+function handlemovement_stiffness(agent){
+global.Symp_Item.push('movement stiffness');
+}
+function handlespinning_movements(agent){
+global.Symp_Item.push('spinning movements');
+}
+function handleloss_of_balance(agent){
+global.Symp_Item.push('loss of balance');
+}
+function handleunsteadiness(agent){
+global.Symp_Item.push('unsteadiness');
+}
+function handleweakness_of_one_body_side(agent){
+global.Symp_Item.push('weakness of one body side');
+}
+function handleloss_of_smell(agent){
+global.Symp_Item.push('loss of smell');
+}
+function handlebladder_discomfort(agent){
+global.Symp_Item.push('bladder discomfort');
+}
+function handlefoul_smell_of_urine(agent){
+global.Symp_Item.push('foul smell of urine');
+}
+function handlecontinuous_feel_of_urine(agent){
+global.Symp_Item.push('continuous feel of urine');
+}
+function handlepassage_of_gases(agent){
+global.Symp_Item.push('passage of gases');
+}
+function handleinternal_itching(agent){
+global.Symp_Item.push('internal itching');
+}
+function handletoxic_look(agent){
+global.Symp_Item.push('toxic look (typhus)');
+}
+function handledepression(agent){
+global.Symp_Item.push('depression');
+}
+function handleirritability(agent){
+global.Symp_Item.push('irritability');
+}
+function handlemuscle_pain(agent){
+global.Symp_Item.push('muscle pain');
+}
+function handlealtered_sensorium(agent){
+global.Symp_Item.push('altered sensorium');
+}
+function handleabnormal_menstruation(agent){
+global.Symp_Item.push('abnormal menstruation');
+}
+function handledyschromic_patches(agent){
+global.Symp_Item.push('dyschromic patches');
+}
+function handlewatering_from_eyes(agent){
+global.Symp_Item.push('watering from eyes');
+}
+function handleincreased_appetite(agent){
+global.Symp_Item.push('increased appetite');
+}
+function handlepolyuria(agent){
+global.Symp_Item.push('polyuria');
+}
+function handlemucoid_sputum(agent){
+global.Symp_Item.push('mucoid sputum');
+}
+function handlerusty_sputum(agent){
+global.Symp_Item.push('rusty sputum');
+}
+function handlelack_of_concentration(agent){
+global.Symp_Item.push('lack of concentration');
+}
+function handlevisual_disturbances(agent){
+global.Symp_Item.push('visual disturbances');
+}
+function handlereceiving_blood_transfusion(agent){
+global.Symp_Item.push('receiving blood transfusion');
+}
+function handlereceiving_unsterile_injections(agent){
+global.Symp_Item.push('receiving unsterile injections');
+}
+function handlecoma(agent){
+global.Symp_Item.push('coma');
+}
+function handlestomach_bleeding(agent){
+global.Symp_Item.push('stomach bleeding');
+}
+function handledistention_of_abdomen(agent){
+global.Symp_Item.push('distention of abdomen');
+}
+function handleblood_in_sputum(agent){
+global.Symp_Item.push('blood in sputum');
+}
+function handleprominent_veins_on_calf(agent){
+global.Symp_Item.push('prominent veins on calf');
+}
+function handlepalpitations(agent){
+global.Symp_Item.push('palpitations');
+}
+function handlepainful_walking(agent){
+global.Symp_Item.push('painful walking');
+}
+function handlepus_filled_pimples(agent){
+global.Symp_Item.push('pus filled pimples');
+}function handleblackheads(agent){
+global.Symp_Item.push('blackheads');
+}
+function handlescurring(agent){
+global.Symp_Item.push('scurring');
+}
+function handleskin_peeling(agent){
+global.Symp_Item.push('skin peeling');
+}
+function handlesilver_like_dusting(agent){
+global.Symp_Item.push('silver like dusting');
+}
+function handlesmall_dents_in_nails(agent){
+global.Symp_Item.push('small dents in nails');
+}
+function handleinflammatory_nails(agent){
+global.Symp_Item.push('inflammatory nails');
+}
+function handleblister(agent){
+global.Symp_Item.push('blister');
+}
+function handlered_sore_around_nose(agent){
+global.Symp_Item.push('red sore around nose');
+}
+function handleyellow_crust_ooze(agent){
+global.Symp_Item.push('yellow crust ooze');
+}
+  function handlechills(agent){
+  global.Symp_Item.push('chills');
+  }
+  function handleulcer_on_tongue(agent){
+  global.Symp_Item.push('ulcer_on_tongue');
+  }
+  function handledizziness(agent){
+   global.Symp_Item.push('dizziness');
+  }
+ function handlePermission(agent){
+  
+  const url = "http://134.119.194.12:5000/disease/";
+  const data = 
+    {
+    "symptoms" : global.Symp_Item,
+     "name" : global.name_main,
+     "email" : global.email_main,
+     "phone" : global.phone_number_main
+  };
+  return axios.post(url, data)
+   .then(jsonBody => {
+      //var body = JSON.parse(jsonBody);
+    //agent.add(`${global.name_main} you have following Symptoms : ${global.Symp_Item}`);
+      agent.add("Probable Disease : - "+ jsonBody.data.prediction[0]);
+      agent.add("Confidence Level : - "+ jsonBody.data.prediction[1]);
+      console.log(jsonBody.data.prediction);
+      return Promise.resolve(agent);
+    })
+   .catch(err => {
+            console.error('Problem making network call', err);
+            agent.add(`Unable to get result`);
+            return Promise.resolve(agent);
+        });
+ }
+  let intentMap = new Map();
+  intentMap.set('RhymingWord', rymingwordhandler);
+  intentMap.set('Default Welcome Intent', welcome);
+  intentMap.set('Default Fallback Intent', fallback);
+  intentMap.set('ReadFromDB', handleReadFromDB);
+  intentMap.set('Permission',handlePermission);
+  intentMap.set('Back_Pain',handlebackpain);
+  intentMap.set('mild_fever',handlemildfever);
+  intentMap.set('Cramps',handleCramps);
+  intentMap.set('Bruising',handleBruising);
+  intentMap.set('Obesity',handleObesity);
+  intentMap.set('belly_pain',handlebellypain);
+intentMap.set('itching',handleitching);
+intentMap.set('skin_rash',handleskin_rash);
+ intentMap.set('nodal_skin_eruptions',handlenodal_skin_eruptions);
+ intentMap.set('continuous_sneezing',handlecontinuous_sneezing);
+ intentMap.set('shivering',handleshivering);
+ intentMap.set('chills',handlechills);
+ intentMap.set('joint_pain',handlejoint_pain);
+ intentMap.set('stomach_pain',handlestomach_pain);
+ intentMap.set('acidity',handleacidity);
+ intentMap.set('ulcer_on_tongue',handleulcer_on_tongue);
+
+ intentMap.set('muscle_wasting',handlemuscle_wasting);
+ intentMap.set('vomiting',handlevomiting);
+ intentMap.set('burning_micturition',handleburning_micturition);
+ intentMap.set('spotting_urination',handlespotting_urination); 
+intentMap.set('fatigue',handlefatigue);
+ intentMap.set('weight_gain',handleweight_gain);
+ intentMap.set('anxiety',handleanxiety);
+ intentMap.set('cold_hands_and_feets',handlecold_hands_and_feets);
+ intentMap.set('mood_swings',handlemood_swings);
+ intentMap.set('weight_loss',handleweight_loss);
+ intentMap.set('restlessness',handlerestlessness);
+  intentMap.set('lethargy',handlelethargy);
+intentMap.set('patches_in_throat',handlepatches_in_throat);
+intentMap.set('irregular_sugar_level',handleirregular_sugar_level);
+intentMap.set('cough',handlecough);
+intentMap.set('high_fever',handlehigh_fever);
+intentMap.set('sunken_eyes',handlesunken_eyes);
+intentMap.set('breathlessness',handlebreathlessness);
+intentMap.set('sweating',handlesweating);
+intentMap.set('dehydration',handledehydration);
+intentMap.set('indigestion',handleindigestion);intentMap.set('headache',handleheadache);
+intentMap.set('yellowish_skin',handleyellowish_skin);
+intentMap.set('dark_urine',handledark_urine);
+intentMap.set('nausea',handlenausea);
+intentMap.set('loss_of_appetite',handleloss_of_appetite);
+intentMap.set('pain_behind_the_eyes',handlepain_behind_the_eyes);
+intentMap.set('constipation',handleconstipation);
+intentMap.set('abdominal_pain',handleabdominal_pain);
+intentMap.set('diarrhea',handlediarrhea);
+intentMap.set('yellow_urine',handleyellow_urine);
+intentMap.set('yellowing_of_eyes',handleyellowing_of_eyes);
+intentMap.set('acute_liver_failure',handleacute_liver_failure);
+intentMap.set('fluid_overload',handlefluid_overload);
+intentMap.set('swelling_of_stomach',handleswelling_of_stomach);
+
+intentMap.set('swelled_lymph_nodes',handleswelled_lymph_nodes);
+
+intentMap.set('malaise',handlemalaise);
+intentMap.set('chest_pain',handlechest_pain);  
+
+intentMap.set('blurred_and_distorted_vision',handleblurred_and_distorted_vision);
+
+intentMap.set('phlegm',handlephlegm);
+
+intentMap.set('throat_irritation',handlethroat_irritation);
+
+intentMap.set('redness_of_eyes',handleredness_of_eyes);
+
+intentMap.set('sinus_pressure',handlesinus_pressure);
+
+intentMap.set('runny_nose',handlerunny_nose);
+
+intentMap.set('congestion',handlecongestion);
+
+intentMap.set('weakness_in_limbs',handleweakness_in_limbs);
+
+intentMap.set('fast_heart_rate',handlefast_heart_rate);
+
+intentMap.set('pain_during_bowel_movements',handlepain_during_bowel_movements);
+
+intentMap.set('pain_in_anal_region',handlepain_in_anal_region);
+
+intentMap.set('bloody_stool',handlebloody_stool);
+
+intentMap.set('irritation_in_anus',handleirritation_in_anus);
+
+intentMap.set('neck_pain',handleneck_pain);
+
+intentMap.set('dizziness',handledizziness);
+
+intentMap.set('swollen_legs',handleswollen_legs);
+
+intentMap.set('swollen_blood_vessels',handleswollen_blood_vessels);
+intentMap.set('puffy_face_and_eyes',handlepuffy_face_and_eyes);
+intentMap.set('enlarged_thyroid',handleenlarged_thyroid);
+
+intentMap.set('brittle_nails',handlebrittle_nails);
+
+intentMap.set('swollen_extremeties',handleswollen_extremeties);
+
+intentMap.set('drying_and_tingling_lips',handledrying_and_tingling_lips);
+
+intentMap.set('slurred_speech',handleslurred_speech);
+
+intentMap.set('knee_pain',handleknee_pain);
+
+intentMap.set('hip_joint_pain',handlehip_joint_pain);
+
+intentMap.set('muscle_weakness',handlemuscle_weakness);
+
+intentMap.set('stiff_neck',handlestiff_neck);
+intentMap.set('swelling_joints',handleswelling_joints);
+intentMap.set('movement_stiffness',handlemovement_stiffness);
+intentMap.set('spinning_movements',handlespinning_movements);
+intentMap.set('loss_of_balance',handleloss_of_balance);
+intentMap.set('unsteadiness',handleunsteadiness);
+intentMap.set('weakness_of_one_body_side',handleweakness_of_one_body_side);
+intentMap.set('loss_of_smell',handleloss_of_smell);
+intentMap.set('bladder_discomfort',handlebladder_discomfort);
+intentMap.set('foul_smell_of urine',handlefoul_smell_of_urine);
+intentMap.set('continuous_feel_of_urine',handlecontinuous_feel_of_urine);
+intentMap.set('passage_of_gases',handlepassage_of_gases);
+intentMap.set('internal_itching',handleinternal_itching);
+intentMap.set('toxic_look_(typhus)',handletoxic_look);
+intentMap.set('depression',handledepression);
+intentMap.set('irritability',handleirritability);
+intentMap.set('muscle_pain',handlemuscle_pain);
+intentMap.set('altered_sensorium',handlealtered_sensorium);
+intentMap.set('abnormal_menstruation',handleabnormal_menstruation);
+intentMap.set('dyschromic _patches',handledyschromic_patches);
+intentMap.set('watering_from_eyes',handlewatering_from_eyes);
+intentMap.set('increased_appetite',handleincreased_appetite);
+intentMap.set('polyuria',handlepolyuria);
+intentMap.set('mucoid_sputum',handlemucoid_sputum);
+intentMap.set('rusty_sputum',handlerusty_sputum);
+intentMap.set('lack_of_concentration',handlelack_of_concentration);
+intentMap.set('visual_disturbances',handlevisual_disturbances);
+intentMap.set('receiving_blood_transfusion',handlereceiving_blood_transfusion);
+intentMap.set('receiving_unsterile_injections',handlereceiving_unsterile_injections);
+intentMap.set('coma',handlecoma);
+intentMap.set('stomach_bleeding',handlestomach_bleeding);
+intentMap.set('distention_of_abdomen',handledistention_of_abdomen);
+intentMap.set('blood_in_sputum',handleblood_in_sputum);
+intentMap.set('prominent_veins_on_calf',handleprominent_veins_on_calf);
+intentMap.set('palpitations',handlepalpitations);
+intentMap.set('painful_walking',handlepainful_walking);
+intentMap.set('pus_filled_pimples',handlepus_filled_pimples);
+intentMap.set('blackheads',handleblackheads);
+intentMap.set('scurring',handlescurring);
+intentMap.set('silver_like_dusting',handlesilver_like_dusting);
+intentMap.set('skin_peeling',handleskin_peeling);
+intentMap.set('small_dents_in_nails',handlesmall_dents_in_nails);
+intentMap.set('inflammatory_nails',handleinflammatory_nails);
+intentMap.set('blister',handleblister);
+intentMap.set('red_sore_around_nose',handlered_sore_around_nose);
+intentMap.set('yellow_crust_ooze',handleyellow_crust_ooze);
+intentMap.set('Medical',handlemedical);
+  agent.handleRequest(intentMap);
+});
