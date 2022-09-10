@@ -1,0 +1,42 @@
+{
+  "id": "83ca6af5-02d2-4af2-bf09-e6585eb659a7",
+  "name": "distention_of_abdomen",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Do you also have following issue ?",
+          "replies": [
+            "nausea",
+            "vomiting",
+            "diarrhea",
+            "fever",
+            "itching",
+            "back pain",
+            "Submit"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

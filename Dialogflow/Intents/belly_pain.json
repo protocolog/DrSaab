@@ -1,0 +1,47 @@
+{
+  "id": "288e121a-07c8-4c08-bb71-0dea51537af6",
+  "name": "belly_pain",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Do you also have following issue ?",
+          "replies": [
+            "Dizziness",
+            "diarrhea",
+            "joint pain",
+            "vomiting",
+            "fever",
+            "stomach pain",
+            "dark urine",
+            "loss of appetite",
+            "fatigue",
+            "Submit"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "ok sending response..."
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "facebook": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

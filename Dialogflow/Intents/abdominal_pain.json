@@ -1,0 +1,41 @@
+{
+  "id": "7f9ef37b-e58f-433e-a3b5-e0af3531d19a",
+  "name": "abdominal_pain",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Do you also have following issue ?",
+          "replies": [
+            "constipation",
+            "indigestion",
+            "stomach pain",
+            "muscle pain",
+            "chest pain",
+            "Submit"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

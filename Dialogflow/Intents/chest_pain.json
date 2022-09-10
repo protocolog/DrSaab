@@ -1,0 +1,43 @@
+{
+  "id": "2b86b833-1cdc-4c1a-90fe-998b4804a088",
+  "name": "chest_pain",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Do you also have following issue ?",
+          "replies": [
+            "indigestion",
+            "cough",
+            "mucoid sputum",
+            "fever",
+            "breathlessness",
+            "headache",
+            "muscle weakness",
+            "Submit"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,41 @@
+{
+  "id": "1ae3fbd7-cc4d-44e1-899e-76aa9456e55d",
+  "name": "bladder_discomfort",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Do you also have following issue ?",
+          "replies": [
+            "swollen legs",
+            "swelling joints",
+            "swelling of stomach",
+            "swelled lymph nodes",
+            "hip joint pain",
+            "Submit"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

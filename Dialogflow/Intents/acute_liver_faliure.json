@@ -1,0 +1,43 @@
+{
+  "id": "c560ca92-58e3-48d4-a54e-a6b9578552df",
+  "name": "acute_liver_faliure",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Do you also have following issue ?",
+          "replies": [
+            "fever",
+            "jaundice",
+            "belly pain",
+            "loss of appetite",
+            "weakness in limbs",
+            "stomach pain",
+            "joint pain",
+            "Submit"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

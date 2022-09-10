@@ -1,0 +1,94 @@
+[
+  {
+    "id": "3c003d12-3680-492d-abfe-f45de019b65f",
+    "data": [
+      {
+        "text": "Please book a flight to ",
+        "userDefined": false
+      },
+      {
+        "text": "London",
+        "alias": "geo-city",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "on 26 May",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c22823a5-0000-43d4-b903-588fb4282b6b",
+    "data": [
+      {
+        "text": "Please book a flight ticket to ",
+        "userDefined": false
+      },
+      {
+        "text": "London",
+        "alias": "geo-city",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "next week",
+        "alias": "date-period",
+        "meta": "@sys.date-period",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "bfa7ec1a-ac08-4ca2-9507-8f6ca5b9587b",
+    "data": [
+      {
+        "text": "please book a ticket of bus",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d56acf9d-d890-407a-a399-0a9a35c4796a",
+    "data": [
+      {
+        "text": "book a bus to Jhunjhunu",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "368acf46-65aa-4029-92f9-6bd1680cec80",
+    "data": [
+      {
+        "text": "Book a flight to Jaipur",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]
