@@ -1,0 +1,43 @@
+{
+  "id": "7c29b2d4-b62d-4d07-9928-386ba1e9210d",
+  "name": "swelled_lymph_nodes",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Do you also have following issue ?",
+          "replies": [
+            "swelling of stomach",
+            "sinus pressure",
+            "runny nose",
+            "muscle pain",
+            "chills",
+            "throat irritation",
+            "swollen blood vessel",
+            "Submit"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

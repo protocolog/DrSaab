@@ -1,0 +1,44 @@
+{
+  "id": "070b664c-6d6f-4b5a-a2fe-440749d1c056",
+  "name": "yellowing_of_eyes",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Do you also have following issue ?",
+          "replies": [
+            "weakness in limbs",
+            "fatigue",
+            "muscle pain",
+            "itching",
+            "chest pain",
+            "neck pain",
+            "bruising",
+            "yellowish skin",
+            "Submit"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

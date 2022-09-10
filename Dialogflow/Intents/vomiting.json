@@ -1,0 +1,44 @@
+{
+  "id": "e4813ac8-1c4b-4f70-87dc-50bd3de0b6bd",
+  "name": "vomiting",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Do you also have following issue ?",
+          "replies": [
+            "nausea",
+            "chest pain",
+            "headache",
+            "diarrhea",
+            "fluid overload",
+            "indigestion",
+            "chills",
+            "runny nose",
+            "Submit"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}
