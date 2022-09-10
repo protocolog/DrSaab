@@ -1,0 +1,32 @@
+{
+  "id": "6bfdc857-17cc-4280-99c1-c14c55c93ca2",
+  "name": "smalltalk.agent.boring",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.boring",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I\u0027m sorry. I\u0027ll request to be made more charming.",
+            "I don\u0027t mean to be. I\u0027ll ask my developers to work on making me more amusing.",
+            "I can let my developers know so they can make me funny."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

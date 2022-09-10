@@ -1,0 +1,44 @@
+{
+  "id": "ca9018e3-8fe2-44e5-ab2d-6a95bcb57518",
+  "name": "runny_nose",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Do you also have following issue ?",
+          "replies": [
+            "fever",
+            "stomach pain",
+            "sinus pressure",
+            "headache",
+            "chills",
+            "chest pain",
+            "diarrhea",
+            "nausea",
+            "Submit"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

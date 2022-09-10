@@ -1,0 +1,33 @@
+{
+  "id": "4c572c14-b1b8-499b-ab87-361031feb5d2",
+  "name": "smalltalk.agent.busy",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "smalltalk.agent.busy",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I always have time to chat with you. What can I do for you?",
+            "Never too busy for you. Shall we chat?",
+            "You\u0027re my priority. Do you wanna chat?",
+            "I always have time to chat with you. Wanna chat?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

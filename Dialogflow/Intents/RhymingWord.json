@@ -1,0 +1,40 @@
+{
+  "id": "5f584947-775d-44c0-8936-e98b9a5e55e2",
+  "name": "RhymingWord",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "6b1ecc89-7cad-44f2-80a6-b26e2f697ca4",
+          "required": false,
+          "dataType": "@sys.any",
+          "name": "word",
+          "value": "$word",
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}
