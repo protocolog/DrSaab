@@ -1,0 +1,44 @@
+{
+  "id": "af6ecab6-d3e8-4fd0-9bc2-05c9f7b6e528",
+  "name": "high_fever",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "Do you also have following issue ?",
+          "replies": [
+            "vomiting",
+            "bruising",
+            "increased appetite",
+            "back pain",
+            "burning micturition",
+            "joint pain",
+            "dark urine",
+            "irritability",
+            "Submit"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "0f053483-9008-4ea1-8c75-0807cddb3f61",
+    "data": [
+      {
+        "text": "stop the chat",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "5092a6ae-d6ea-4163-a280-9246f89d0556",
+    "data": [
+      {
+        "text": "end conversation",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "dddf3906-e461-4469-bf77-9318ce2a6d4e",
+    "data": [
+      {
+        "text": "my thyroid is bigger then normal",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a5745034-3894-4a9e-a1df-62b4e2fbdd25",
+    "data": [
+      {
+        "text": "size of my thyroid is increased",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b9982b2e-d097-4163-8240-439673419bb6",
+    "data": [
+      {
+        "text": "my thyroid is enlarged",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ab2c26f9-4cda-4c5d-a9ff-7f23e08f88d7",
+    "data": [
+      {
+        "text": "enlarged thyroid",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]
